@@ -14,6 +14,7 @@ function toggleFamilyField($){
     } else {
        $('.helprow-custom_6-section').hide();
        $('.editrow_custom_6-section').hide();
+       $('textarea#custom_6').val("");
     }
 }
 
