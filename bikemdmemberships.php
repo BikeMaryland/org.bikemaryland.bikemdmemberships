@@ -2,6 +2,35 @@
 
 require_once 'bikemdmemberships.civix.php';
 
+define('FAMILY_FIELD', 'custom_6');
+define('MEMBERSHIP_FORM', 'CRM_Contribute_Form_Contribution_Main');
+
+/**
+ * Implementation of hook_civicrm_buildForm
+ *
+ */
+function bikemdmemberships_civicrm_buildForm($formName, &$form) {
+    $version = CRM_Utils_System::version();
+
+    if(startsWith($version, "4.5")){
+    } else if(startsWith($version, "4.4")){
+        bikemdmemberships_version44($formName, $form);
+    }
+}
+
+function bikemdmemberships_version44($formName, &$form) {
+//    var_dump($formName);
+
+   if ($formName==MEMBERSHIP_FORM and 
+       $form->elementExists(FAMILY_FIELD)){
+         $templatePath = realpath(dirname(__FILE__) . "/templates");
+        CRM_Core_Region::instance('page-body')->add(array(
+            'template' => "{$templatePath}/memberships44.tpl"
+        ));
+   }
+}
+
+
 /**
  * Implementation of hook_civicrm_config
  *
