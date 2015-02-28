@@ -3,10 +3,11 @@
 
 function toggleFamilyField($){
 
+    // check state of 1-yr and 3-yr family memberships	 
     if($("input[membership-type=2]").is(':checked') || 
        $("input[membership-type=10]").is(':checked')){
 
-       console.log("Family!");
+       console.log("show family membership field ");
 
        $('.helprow-custom_6-section').show();
        $('.editrow_custom_6-section').show();
@@ -14,7 +15,6 @@ function toggleFamilyField($){
        $('.helprow-custom_6-section').hide();
        $('.editrow_custom_6-section').hide();
     }
-
 }
 
 cj(document).ready(function($) {
@@ -25,7 +25,6 @@ cj(document).ready(function($) {
     $("input[name=price_19]").click(function(){
 	toggleFamilyField($);
     });
-    
 });
 {/literal}	
 </script>
