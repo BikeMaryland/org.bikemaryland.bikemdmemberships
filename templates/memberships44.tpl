@@ -26,6 +26,9 @@ cj(document).ready(function($) {
     $("input[name=price_19]").click(function(){
 	toggleFamilyField($);
     });
+
+    // Move legislative districts if present
+    $(".crm-profile-id-33").insertAfter(".custom_pre_profile-group");
 });
 {/literal}	
 </script>
