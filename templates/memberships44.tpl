@@ -19,7 +19,7 @@ function toggleFamilyField($){
 }
 
 cj(document).ready(function($) {
-    console.log( "membership ready! " );
+    console.log( "bikemdmemberships ready! " );
 
     toggleFamilyField($);
 

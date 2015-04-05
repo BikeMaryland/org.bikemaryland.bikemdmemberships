@@ -13,6 +13,7 @@ function bikemdmemberships_civicrm_buildForm($formName, &$form) {
     $version = CRM_Utils_System::version();
 
     if(startsWith($version, "4.5")){
+        bikemdmemberships_version44($formName, $form);
     } else if(startsWith($version, "4.4")){
         bikemdmemberships_version44($formName, $form);
     }
